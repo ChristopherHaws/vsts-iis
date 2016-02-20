@@ -21,7 +21,7 @@
     "url": "https://github.com/ChristopherHaws/vsts-iis/issues"
   },
   "main": "lib/index.js",
-  "typings": "lib/index",
+  "typings": "def/index",
   "files": [
     "LICENSE.txt",
     "README.md",
