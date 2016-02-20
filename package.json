@@ -1,6 +1,6 @@
 {
   "name": "vsts-iis",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "IIS AppCmd wrapper for VSTS",
   "dependencies": {
     "vsts-task-lib": "^0.5.10"
