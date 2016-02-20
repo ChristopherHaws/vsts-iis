@@ -1,0 +1,43 @@
+{
+	"name": "vsts-iis",
+	"version": "0.1.0",
+	"description": "IIS AppCmd wrapper for VSTS",
+	"dependencies": {
+		"vsts-task-lib": "^0.5.10"
+	},
+	"devDependencies": {
+		"gulp": "^3.8.11",
+		"gulp-debug": "^2.1.2",
+		"gulp-typescript": "^2.11.0",
+		"merge2": "^1.0.1"
+	},
+	"homepage": "https://github.com/ChristopherHaws/vsts-iis",
+	"author": "Christopher Haws",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ChristopherHaws/vsts-iis/issues"
+	},
+	"main": "lib/site.js",
+	"files": [
+		"LICENSE.txt",
+		"README.md",
+		"lib",
+		"definitions"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ChristopherHaws/vsts-iis.git"
+	},
+	"keywords": [
+		"vsts",
+		"iis",
+		"visual studio",
+		"team services",
+		"tfs",
+		"build",
+		"release",
+		"release management",
+		"appcmd",
+		"task"
+	]
+}
