@@ -9,7 +9,7 @@ var project = typescript.createProject("tsconfig.json", {
 	sortOutput: true
 });
 
-gulp.task('typescript', function (callback) {
+gulp.task('build', function (callback) {
     var tsResult = gulp
 		.src([
             './typings/**/*.d.ts',
@@ -18,9 +18,9 @@ gulp.task('typescript', function (callback) {
         .pipe(typescript(project));
 		
 	return merge([
-        tsResult.dts.pipe(concat("vsts-iis.d.ts")).pipe(gulp.dest('.')),
-        tsResult.js.pipe(concat("vsts-iis.js")).pipe(gulp.dest('.'))
+        tsResult.dts.pipe(concat("index.d.ts")).pipe(gulp.dest('.')),
+        tsResult.js.pipe(concat("index.js")).pipe(gulp.dest('.'))
     ]);
 });
 
-gulp.task('default', ['typescript']);
+gulp.task('default', ['build']);

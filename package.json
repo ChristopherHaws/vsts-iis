@@ -18,12 +18,13 @@
 	"bugs": {
 		"url": "https://github.com/ChristopherHaws/vsts-iis/issues"
 	},
-	"main": "vsts-iis.js",
+	"main": "index.js",
+	"typings": "index",
 	"files": [
 		"LICENSE.txt",
 		"README.md",
-		"vsts-iis.js",
-		"vsts-iis.d.ts"
+		"index.js",
+		"index.d.ts"
 	],
 	"repository": {
 		"type": "git",
