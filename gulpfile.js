@@ -2,9 +2,11 @@ var gulp = require('gulp');
 var typescript = require('gulp-typescript');
 var debug = require('gulp-debug');
 var merge = require('merge2');
+var concat = require('gulp-concat');
 
 var project = typescript.createProject("tsconfig.json", {
-	noExternalResolve: true
+	noExternalResolve: true,
+	sortOutput: true
 });
 
 gulp.task('typescript', function (callback) {
@@ -16,8 +18,8 @@ gulp.task('typescript', function (callback) {
         .pipe(typescript(project));
 		
 	return merge([
-        tsResult.dts.pipe(gulp.dest('./definitions')),
-        tsResult.js.pipe(gulp.dest('./lib'))
+        tsResult.dts.pipe(concat("vsts-iis.d.ts")).pipe(gulp.dest('.')),
+        tsResult.js.pipe(concat("vsts-iis.js")).pipe(gulp.dest('.'))
     ]);
 });
 

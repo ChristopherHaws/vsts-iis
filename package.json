@@ -1,6 +1,6 @@
 {
 	"name": "vsts-iis",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "IIS AppCmd wrapper for VSTS",
 	"dependencies": {
 		"vsts-task-lib": "^0.5.10"
@@ -9,6 +9,7 @@
 		"gulp": "^3.8.11",
 		"gulp-debug": "^2.1.2",
 		"gulp-typescript": "^2.11.0",
+		"gulp-concat": "^2.6.0",
 		"merge2": "^1.0.1"
 	},
 	"homepage": "https://github.com/ChristopherHaws/vsts-iis",
@@ -17,12 +18,12 @@
 	"bugs": {
 		"url": "https://github.com/ChristopherHaws/vsts-iis/issues"
 	},
-	"main": "lib/site.js",
+	"main": "vsts-iis.js",
 	"files": [
 		"LICENSE.txt",
 		"README.md",
-		"lib",
-		"definitions"
+		"vsts-iis.js",
+		"vsts-iis.d.ts"
 	],
 	"repository": {
 		"type": "git",
