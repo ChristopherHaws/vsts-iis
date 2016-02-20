@@ -1,11 +1,15 @@
 {
 	"version": "1.7.5",
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "noImplicitAny": true,
-        "suppressImplicitAnyIndexErrors":  true,
-        "noResolve": true,
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"outDir": "dist",
+		"noImplicitAny": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"noResolve": true,
 		"declaration": true
-    }
+	 },
+	 "exclude": [
+		"node_modules/"
+	]
 }

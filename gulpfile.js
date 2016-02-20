@@ -13,27 +13,27 @@ var project = typescript.createProject("tsconfig.json", {
 
 gulp.task("clean", function(callback) {
 	return del([
-		"def",
-		"lib"
+		"dist",
+		"dist"
 	]);
 });
 
 gulp.task("build", ["clean"], function (callback) {
-    var tsResult = gulp
+	var tsResult = gulp
 		.src([
-            "./typings/**/*.d.ts",
-            "./src/**/*.ts"
-        ])
-        .pipe(typescript(project));
-		
+			"./typings/**/*.d.ts",
+			"./src/**/*.ts"
+		])
+		.pipe(typescript(project));
+
 	// return merge([
-    //     tsResult.dts.pipe(concat("index.d.ts")).pipe(gulp.dest(".")),
-    //     tsResult.js.pipe(concat("index.js")).pipe(gulp.dest("."))
-    // ]);
+	//     tsResult.dts.pipe(concat("index.d.ts")).pipe(gulp.dest(".")),
+	//     tsResult.js.pipe(concat("index.js")).pipe(gulp.dest("."))
+	// ]);
 	return merge([
-        tsResult.dts.pipe(gulp.dest("./def")),
-        tsResult.js.pipe(gulp.dest("./lib"))
-    ]);
+		tsResult.dts.pipe(gulp.dest("./dist")),
+		tsResult.js.pipe(gulp.dest("./dist"))
+	]);
 });
 
 gulp.task("default", ["build"]);
