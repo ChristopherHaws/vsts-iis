@@ -7,10 +7,11 @@ export interface SiteOptions {
     bindings?: string;
     path?: string;
 }
-export declare class SiteManager {
+export declare class AppPoolManager {
     addSync(options: SiteOptions): toolRunner.IExecResult;
     removeSync(name: string): toolRunner.IExecResult;
     startSync(name: string): toolRunner.IExecResult;
     stopSync(name: string): toolRunner.IExecResult;
+    setIdentitySync(name: string, identity: string): toolRunner.IExecResult;
     existsSync(name: string): boolean;
 }
