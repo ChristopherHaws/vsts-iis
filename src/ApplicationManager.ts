@@ -9,7 +9,7 @@ export interface ApplicationOptions {
 }
 
 export class ApplicationManager {
-	public addSync(options: ApplicationOptions) {
+	public add(options: ApplicationOptions) {
 		vsts.debug("Adding app folder...");
 
 		var toolRunner = AppCmd.createAppCmdToolRunner();
@@ -18,10 +18,10 @@ export class ApplicationManager {
 		toolRunner.arg('/path:/' + options.virtualPath);
 		toolRunner.arg('/physicalPath:"' + options.physicalPath + '"');
 
-		return toolRunner.execSync();
+		return toolRunner.exec();
 	}
 
-	public setAppPoolSync(appName: string, appPoolName: string): toolRunner.IExecResult {
+	public setAppPool(appName: string, appPoolName: string): Q.Promise<number> {
 		vsts.debug("Setting the AppPool for app...");
 
 		var toolRunner = AppCmd.createAppCmdToolRunner();
@@ -29,10 +29,10 @@ export class ApplicationManager {
 		toolRunner.arg('/app.name:"' + appName + '"');
 		toolRunner.arg('/applicationPool:' + appPoolName);
 
-		return toolRunner.execSync();
+		return toolRunner.exec();
 	}
 
-	public setWindowsAuthenticationSync(appPath: string, enable: boolean): toolRunner.IExecResult {
+	public setWindowsAuthentication(appPath: string, enable: boolean): Q.Promise<number> {
 		vsts.debug("Setting the AppPool for app...");
 
 		var toolRunner = AppCmd.createAppCmdToolRunner();
@@ -41,10 +41,10 @@ export class ApplicationManager {
 		toolRunner.arg('/section:windowsAuthentication');
 		toolRunner.arg('/enabled:"' + enable + '"');
 
-		return toolRunner.execSync();
+		return toolRunner.exec();
 	}
 
-	public setAnonymousAuthenticationSync(appPath: string, enable: boolean): toolRunner.IExecResult {
+	public setAnonymousAuthentication(appPath: string, enable: boolean): Q.Promise<number> {
 		vsts.debug("Setting the AppPool for app...");
 
 		var toolRunner = AppCmd.createAppCmdToolRunner();
@@ -53,16 +53,16 @@ export class ApplicationManager {
 		toolRunner.arg('/section:anonymousAuthentication');
 		toolRunner.arg('/enabled:"' + enable + '"');
 
-		return toolRunner.execSync();
+		return toolRunner.exec();
 	}
 
-	public existsSync(name: string): boolean {
+	public exists(name: string): Q.Promise<number> {
 		vsts.debug("Checking if site app...");
 
 		var toolRunner = AppCmd.createAppCmdToolRunner();
 		toolRunner.arg("list app");
 		toolRunner.arg("/name:" + name);
 
-		return toolRunner.execSync().code === 0;
+		return toolRunner.exec();
 	}
 }

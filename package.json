@@ -1,46 +1,49 @@
 {
-  "name": "vsts-iis",
-  "version": "0.2.2",
-  "description": "IIS AppCmd wrapper for VSTS",
-  "dependencies": {
-    "vsts-task-lib": "^0.5.10"
-  },
-  "devDependencies": {
-    "gulp": "^3.8.11",
-    "gulp-install": "^0.6.0",
-    "gulp-debug": "^2.1.2",
-    "gulp-typescript": "^2.11.0",
-    "gulp-concat": "^2.6.0",
-    "merge2": "^1.0.1",
-    "del": "^2.2.0"
-  },
-  "homepage": "https://github.com/ChristopherHaws/vsts-iis",
-  "author": "Christopher Haws",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ChristopherHaws/vsts-iis/issues"
-  },
-  "main": "dist/index.js",
-  "typings": "dist/index",
-  "files": [
-    "LICENSE.txt",
-    "README.md",
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ChristopherHaws/vsts-iis.git"
-  },
-  "keywords": [
-    "vsts",
-    "iis",
-    "visual studio",
-    "team services",
-    "tfs",
-    "build",
-    "release",
-    "release management",
-    "appcmd",
-    "task"
-  ]
+	"name": "vsts-iis",
+	"version": "0.2.2",
+	"description": "IIS AppCmd wrapper for VSTS",
+	"dependencies": {
+		"vsts-task-lib": "^0.5.10"
+	},
+	"devDependencies": {
+		"gulp": "^3.8.11",
+		"gulp-install": "^0.6.0",
+		"gulp-debug": "^2.1.2",
+		"gulp-typescript": "^2.11.0",
+		"gulp-concat": "^2.6.0",
+		"merge2": "^1.0.1",
+		"del": "^2.2.0"
+	},
+	"homepage": "https://github.com/ChristopherHaws/vsts-iis",
+	"author": "Christopher Haws",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ChristopherHaws/vsts-iis/issues"
+	},
+	"main": "dist/index.js",
+	"typings": "dist/index",
+	"files": [
+		"LICENSE.txt",
+		"README.md",
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ChristopherHaws/vsts-iis.git"
+	},
+	"engines": {
+		"node": "*"
+	}
+	"keywords": [
+		"vsts",
+		"iis",
+		"visual studio",
+		"team services",
+		"tfs",
+		"build",
+		"release",
+		"release management",
+		"appcmd",
+		"task"
+	]
 }
