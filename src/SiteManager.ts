@@ -55,13 +55,23 @@ export class SiteManager {
 		return toolRunner.exec();
 	}
 
-	public exists(name: string): Q.Promise<number> {
+	public exists(name: string): Q.Promise<boolean> {
 		vsts.debug("Checking if site exists...");
 
 		var toolRunner = AppCmd.createAppCmdToolRunner();
 		toolRunner.arg("list site");
 		toolRunner.arg("/name:" + name);
 
-		return toolRunner.exec();
+		var defered = Q.defer<boolean>();
+
+		toolRunner.exec()
+			.then(code => {
+				defered.resolve(true);
+			})
+			.fail(reason => {
+				defered.resolve(false);
+			});
+
+		return defered.promise;
 	}
 }
